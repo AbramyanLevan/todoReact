@@ -1,24 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React,{useState} from 'react';
+import Todos from './Components/Todos'
+import AddForm from './Components/AddFrom'
 
-function App() {
+const App = () => {
+const [todos,setTodos] = useState([
+
+])
+const deleteTodo = (id) => {
+  console.log(id);
+  const newTodos = todos.filter(todo => {
+    return todo.id !== id
+  })
+  setTodos(newTodos)
+}
+const addTodo = (todo) => {
+  todo.id = Math.random();
+  let todosNew = [...todos, todo]
+  setTodos(todosNew )
+}
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="todo-app container">
+      <h1 className='center blue-text'>toDO</h1>
+      <AddForm
+        addTodo={addTodo}
+      />
+      <Todos
+      todos={todos}
+      deleteTodo={deleteTodo}
+      />
     </div>
   );
 }
