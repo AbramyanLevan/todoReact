@@ -91,7 +91,7 @@ const counter = () => {
 const showAll = () => {
   setFilt(todos)
 }
-const showComplited = () => {
+const showCompleted = () => {
   let todosNew = todos.filter(todo=>{
       if(todo.status === true){
         return todo
@@ -99,7 +99,7 @@ const showComplited = () => {
   })
   setFilt(todosNew)
 }
-const showNotComplited = () => {
+const showNotCompleted = () => {
   let todosNew = todos.filter(todo=>{
       if(todo.status === false){
         return todo
@@ -131,8 +131,8 @@ useEffect(()=>{
       todos={todos}
        left={left}
        showAll={showAll}
-       showComplited={showComplited}
-       showNotComplited={showNotComplited}
+       showCompleted={showCompleted}
+       showNotCompleted={showNotCompleted}
       />
     </div>
   );

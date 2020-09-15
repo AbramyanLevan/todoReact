@@ -22,7 +22,7 @@ const AddFrom = ({addTodo,toggleAll,exist,deleteAll}) => {
             </form>
              <div className='add-block'>
             <button className='toggle' onClick={()=>toggleAll()}><i class="material-icons">keyboard_arrow_down</i></button>
-            {exist && <button onClick={()=>deleteAll()} className='toggle'>Clear complited</button>}
+            {exist && <button onClick={()=>deleteAll()} className='toggle'>Clear completed</button>}
             </div>
         </div>
     )
